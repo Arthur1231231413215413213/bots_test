@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Playa Apps - Planos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo h1 {
+      color: #3498db;
+      font-size: 24px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #3498db;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    .planos h2,
+    .comparativo h2 {
+      text-align: center;
+      color: #3498db;
+      margin-bottom: 30px;
+    }
+
+    .planos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .plano {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 25px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .plano:hover {
+      transform: translateY(-5px);
+    }
+
+    .plano h3 {
+      color: #3498db;
+      margin-bottom: 10px;
+    }
+
+    .preco .valor {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .plano ul {
+      list-style: none;
+      padding: 0;
+      color: #ccc;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .plano ul li {
+      margin: 5px 0;
+    }
+
+    .plano button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .plano button:hover {
+      background-color: #2980b9;
+    }
+
+    .comparativo {
+      margin-top: 60px;
+    }
+
+    table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #1e1e1e;
+      color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    th {
+      background-color: #000;
+      color: #3498db;
+    }
+
+    tbody tr:hover {
+      background-color: #2a2a2a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #aaa;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>Playa Apps</h1>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Início</a>
+      <a href="planos.html" class="active">Planos</a>
+      <a href="contato.html">Contato</a>
+      <a href="sobre.html">Sobre Nós</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="planos">
+      <h2>Escolha o seu plano</h2>
+      <div class="planos-container">
+        <div class="plano">
+          <h3>Bot de Ticket</h3>
+          <div class="preco">
+            <span class="valor">R$ 4,99/mês</span>
+          </div>
+          <ul>
+            <li>Criação ilimitada de tickets</li>
+            <li>Respostas automáticas personalizáveis</li>
+            <li>Suporte 24/7</li>
+          </ul>
+          <button>Assinar Agora</button>
+        </div>
+
+        <div class="plano">
+          <h3>Bot de Vendas</h3>
+          <div class="preco">
+            <span class="valor">R$ 4,99/mês</span>
+          </div>
+          <ul>
+            <li>Automatização de vendas</li>
+            <li>Criação de catálogo de produtos</li>
+            <li>Geração de cupons e promoções</li>
+            <li>Suporte dedicado</li>
+          </ul>
+          <button>Assinar Agora</button>
+        </div>
+
+        <div class="plano">
+          <h3>Bot de Moderação</h3>
+          <div class="preco">
+            <span class="valor">R$ 9,99/mês</span>
+          </div>
+          <ul>
+            <li>Automação de moderação</li>
+            <li>Filtros de conteúdo</li>
+            <li>Relatórios de atividade</li>
+          </ul>
+          <button>Assinar Agora</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparativo">
+      <h2>Comparativo de Planos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Recursos</th>
+            <th>Plano Básico</th>
+            <th>Plano Avançado</th>
+            <th>Plano Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suporte 24/7</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Automação</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Relatórios Avançados</td>
+            <td>✘</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Playa Apps. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
